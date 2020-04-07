@@ -1,0 +1,20 @@
+<%- include ('partials/header') %>
+      <div class="container mt-4">
+          <div class="row">
+              <div class="col-md-9">
+                  <div class="card shadow-sm">
+                    <img class="card-img-top" src="<%=Blog.image %>">
+                    <div class="card-body">
+                      <h5 class="card-title text-capitalise"><%=Blog.title %></h5> 
+                      <p class="card-text"><%= Blog.created.toDateString() %></p>
+                      <p class="card-text"><%- Blog.body %></p>
+                       <a class="btn btn-dark" href="/blogs/<%=Blog._id %>/edit">Update</a>
+                       <form action="/blogs/<%=Blog._id %>?_method=DELETE" method="POST" style="display: inline;">
+                       <button class="btn btn-dark">Delete</button>
+                       </form>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <%- include ('partials/footer') %>
